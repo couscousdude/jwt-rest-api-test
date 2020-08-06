@@ -24,10 +24,10 @@ const writeJSON = async (json) => {
 }
 
 const signup = async (username, password) => {
+    const now = Date.now();
     let users = JSON.parse(await readFile('./users.json'));
 
     try {
-        const now = Date.now();
         users[username] = {
             password: password
         };
